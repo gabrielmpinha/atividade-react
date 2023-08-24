@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    box-sizing:border-box
+}
 html{
     background-color: lightsteelblue;
+    background-image: url("src/assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
 .listaProd{

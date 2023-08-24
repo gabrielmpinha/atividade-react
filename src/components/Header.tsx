@@ -1,3 +1,51 @@
+import { Button } from "./Button";
+import { ButtonProps } from "./Button";
+
+interface HeaderProps {
+  titulo: string;
+  btnHome: ButtonProps;
+  btn2: ButtonProps;
+  btn3: ButtonProps;
+  btnCarrinho: ButtonProps;
+}
+
+export const Header: React.FC<HeaderProps> = ({
+  titulo,
+  btnHome,
+  btn2,
+  btn3,
+  btnCarrinho
+}) => {
+  return (
+    <header className="flex bg-gray-900 sticky top-0 items-center justify-between px-8">
+      <span>{titulo}</span>
+      <div className="">
+        <Button
+          text={btnHome.text}
+          onClick={btnHome.onClick}
+          className={btnHome.className}
+        />
+        <Button
+          text={btn2.text}
+          onClick={btn2.onClick}
+          className={btn2.className}
+        />
+        <Button
+          text={btn3.text}
+          onClick={btn3.onClick}
+          className={btn3.className}
+        />
+      </div>
+      <Button
+          text={btnCarrinho.text}
+          onClick={btnCarrinho.onClick}
+          className={btnCarrinho.className}
+        />
+    </header>
+  );
+};
+
+/*
 export function Header() {
   return (
     <header className="header sticky top-0 bg-gray-800 shadow-md flex items-center justify-between px-8 py-02">
@@ -71,3 +119,4 @@ export function Header() {
     </header>
   );
 }
+*/

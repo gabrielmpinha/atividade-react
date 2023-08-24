@@ -1,12 +1,37 @@
-type ProdutoProps = {
+import { Button } from "./Button";
+
+interface ProdutoProps {
   img: string;
   nome: string;
   valor: number;
-};
+}
 
-export function Produto(props: ProdutoProps) {
+export const Produto: React.FC<ProdutoProps> = ({ img, nome, valor }) => {
   return (
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full max-w-sm border rounded-lg shadow bg-gray-800 border-gray-700">
+      <img
+        className="p-8"
+        src="src/assets/img.jpg"
+        alt="Imagem do produto"
+      ></img>
+      <div className="px-5 pb-5">
+        <h1 className="text-white text-xl font-semibold tracking-wide px-7 pb-3">
+          {nome}
+        </h1>
+        <div className="flex items-center justify-between pr-10 pb-4">
+          <h2 className="text-blue-500 text-2xl font-sans font-semibold tracking-tight px-3">
+            R${valor}
+          </h2>
+
+          <Button
+            text="Adicionar ao Carrinho"
+            onClick={() => ""}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4"
+          />
+        </div>
+      </div>
+    </div>
+    /*<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <img
         className="p-8 rounded-t-lg"
         src="src/assets/img.jpg"
@@ -14,7 +39,7 @@ export function Produto(props: ProdutoProps) {
       />
       <div className="px-5 pb-5">
         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          {props.nome}
+          {nome}
         </h5>
         <div className="flex items-center mt-2.5 mb-5">
           <svg
@@ -68,13 +93,13 @@ export function Produto(props: ProdutoProps) {
         </div>
         <div className="flex items-center justify-between">
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
-            R${props.valor}
+            R${valor}
           </span>
           <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Adicionar ao Carrinho
           </button>
         </div>
       </div>
-    </div>
+    </div>*/
   );
-}
+};
