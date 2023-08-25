@@ -1,3 +1,4 @@
+//import {Produto} from "./Produto"
 export interface ButtonProps{
     text: string;
     onClick:() => void;

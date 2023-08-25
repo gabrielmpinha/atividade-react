@@ -2,6 +2,13 @@ import { ListaProdutos } from "./components/ListaProdutos";
 import { ListaProps } from "./components/ListaProdutos";
 import { Header } from "./components/Header";
 import { ButtonProps } from "./components/Button";
+import { Carrinho, CarrinhoProps } from "./components/Carrinho";
+import {
+  CarrinhoContext,
+  CarrinhoProvider,
+  useCarrinhoContext,
+} from "./hooks/adicionarCarrinho";
+import { ProdCarrinhoProps } from "./components/ProdutoCarrinho";
 function App() {
   const items: ListaProps = {
     items: [
@@ -38,13 +45,31 @@ function App() {
   const btnCarrinho: ButtonProps = {
     text: "Carrinho",
     onClick: () => "",
-    className:""
-  }
+    className: "",
+  };
   //return <div><Header/></div>
+  //return <div><Header titulo="CardStore" btnHome={btnHome} btn2={btn2} btn3={btn3} btnCarrinho={btnCarrinho} /><Carrinho produtos={[]} valorTotal={0}/></div>
+  /*const vazio: CarrinhoProps = {
+    produtos: [{nome:"sa", img:"ti", valor:3}],
+    valorTotal: 0
+  };*/
+  /*const old = JSON.parse(JSON.stringify(localStorage.getItem("carrinho")));
+  const novoCar: CarrinhoProps = {
+    produtos: old ? [JSON.parse(old).produtos] : [],
+    valorTotal: old ? JSON.parse(old).valorTotal : 0,
+  };*/
+  const { carrinho } = useCarrinhoContext();
   return (
     <div>
-      <Header titulo="CardStore" btnHome={btnHome} btn2={btn2} btn3={btn3} btnCarrinho={btnCarrinho} />
-      <ListaProdutos {...items} />
+      <Header
+        titulo="CardStore"
+        btnHome={btnHome}
+        btn2={btn2}
+        btn3={btn3}
+        btnCarrinho={btnCarrinho}
+      />
+      <ListaProdutos />
+      <Carrinho produtos={carrinho.produtos} valorTotal={carrinho.valorTotal} />
     </div>
   );
 }

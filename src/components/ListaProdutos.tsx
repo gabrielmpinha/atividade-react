@@ -1,4 +1,5 @@
 import {Produto} from "./Produto"
+import produtos from "../data/produtos.json"
 
 type Item = {
     nome:string;
@@ -6,10 +7,10 @@ type Item = {
     valor:number;
 }
 export interface ListaProps {
-    items: Item[];
+//items: Item[];
 }
 
-export const ListaProdutos: React.FC<ListaProps> = ({items}) => {
+export const ListaProdutos: React.FC<ListaProps> = () => {
     
     //var items = [{nome: 'Nome1', img: 'link', valor: 10}, {nome: 'Nome2', img: 'link', valor: 120}, {nome: 'Nome3', img: 'link', valor: 89.90}, 
     //{nome: 'Nome4', img: 'link', valor: 220}, {nome: 'Nome5', img: 'link', valor: 323}, {nome: 'Nome6', img: 'link', valor: 24}]
@@ -20,7 +21,7 @@ export const ListaProdutos: React.FC<ListaProps> = ({items}) => {
     return(
         
         <div className="listaProd">
-        {items.map(item => <Produto nome ={item.nome} img = {item.img} valor ={item.valor} key={item.nome}/>)}
+        {JSON.parse(JSON.stringify(produtos)).map((item:any) => <Produto nome ={item.nome} img = {item.img} valor ={item.valor} key={item.nome}/>)}
         </div>
     );
 }

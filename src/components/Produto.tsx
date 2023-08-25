@@ -1,12 +1,33 @@
 import { Button } from "./Button";
+import {
+  CarrinhoContext,
+  CarrinhoProvider,
+  useCarrinhoContext,
+} from "../hooks/adicionarCarrinho";
+import { useContext } from "react";
 
-interface ProdutoProps {
+export interface ProdutoProps {
   img: string;
   nome: string;
   valor: number;
 }
 
 export const Produto: React.FC<ProdutoProps> = ({ img, nome, valor }) => {
+  //const { addCarrinho } = useCarrinhoContext();
+
+  const produto = {
+    nome: nome,
+    img: img,
+    valor: valor,
+  };
+  //const {carrinho, addCarrinho} = CarrinhoProvider();
+  const {addCarrinho} = useCarrinhoContext()
+
+  const click = () => {
+    //carrinhoCtx
+   addCarrinho(produto);
+  };
+
   return (
     <div className="w-full max-w-sm border rounded-lg shadow bg-gray-800 border-gray-700">
       <img
@@ -22,10 +43,10 @@ export const Produto: React.FC<ProdutoProps> = ({ img, nome, valor }) => {
           <h2 className="text-blue-500 text-2xl font-sans font-semibold tracking-tight px-3">
             R${valor}
           </h2>
-
+          
           <Button
             text="Adicionar ao Carrinho"
-            onClick={() => ""}
+            onClick={click}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4"
           />
         </div>
