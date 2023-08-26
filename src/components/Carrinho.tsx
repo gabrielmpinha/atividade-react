@@ -1,9 +1,7 @@
-import { useEffect } from "react";
-import { CarrinhoContext, CarrinhoProvider, useCarrinhoContext } from "../hooks/adicionarCarrinho";
+import { useCarrinhoContext } from "../hooks/adicionarCarrinho";
 import { Button } from "./Button";
 import { ButtonProps } from "./Button";
 import { ProdCarrinhoProps, ProdutoCarrinho } from "./ProdutoCarrinho";
-
 
 export interface CarrinhoProps {
   produtos: ProdCarrinhoProps[];
@@ -12,30 +10,27 @@ export interface CarrinhoProps {
 }
 
 export const Carrinho: React.FC<CarrinhoProps> = ({ produtos, valorTotal }) => {
-    //const {valorTotal:valorTotal2} = useCarrinhoContext();
-    
-    //console.log(carrinho.valorTotal)
-    
+  const { finalizarCompra } = useCarrinhoContext();
 
-    return (
-    
-    //<Context.Provider value={{produtos}}>
-    //<CarrinhoContext.Provider value={{...produtos}}>
-    <div>
-      <div className="flex">
-        {(produtos)?.map((item) => (
+  return (
+
+    <div className="carrinho">
+      <div className="prodCarrinho">
+        {produtos?.map((item) => (
           <ProdutoCarrinho
             nome={item.nome}
             img={item.img}
-            valor={valorTotal}
+            valor={item.valor}
             key={item.nome}
           />
-          
         ))}
       </div>
-      <h2>{valorTotal}</h2>
-      <Button text="Comprar" onClick={() => {}} className="" />
+      <div className="compra w-1/5 h-auto bg-blue-600 rounded-md grid text-center">
+        <h2 className="text-white font-bold">
+          R${typeof valorTotal === "number" ? Number(valorTotal).toFixed(2) : 0}
+        </h2>
+        <Button text="Comprar" onClick={finalizarCompra} className="bg-green-700 hover:bg-green-950 text-white rounded text-center" />
+      </div>
     </div>
-    //</CarrinhoContext.Provider>
   );
 };

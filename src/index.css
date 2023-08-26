@@ -8,8 +8,8 @@
 html{
     background-color: lightsteelblue;
     background-image: url("src/assets/bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat:repeat-y;
+    background-size:cover;
     
 }
 
@@ -24,4 +24,28 @@ html{
     
 
 }
+.carrinho{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    margin:auto;
+    margin-top: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
+    grid-gap:25px;
+}
 
+.compra{
+    align-items: center;
+    margin:auto;
+    margin-top: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
+    text-align: center;
+    min-width:10%;
+    
+}
+
+.prodCarrinho{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}

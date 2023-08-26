@@ -1,52 +1,52 @@
 [
     {
-      "nome": "Cartão PSN R$250",
-      "img": "link",
-      "valor": 10
+      "nome": "Destiny",
+      "img": "img1",
+      "valor": 180
     },
     {
-      "nome": "Nome2",
-      "img": "link",
+      "nome": "God of War",
+      "img": "img2",
       "valor": 120
     },
     {
-      "nome": "Nome3",
-      "img": "link",
-      "valor": 89.9
+      "nome": "Dark Souls Remastered",
+      "img": "img3",
+      "valor": 249.90
     },
     {
-      "nome": "Nome4",
-      "img": "link",
-      "valor": 220
+      "nome": "Bloodborne",
+      "img": "img4",
+      "valor": 199.90
     },
     {
-      "nome": "Nome5",
-      "img": "link",
-      "valor": 323
+      "nome": "Dragon's Dogma Dark Arisen",
+      "img": "img5",
+      "valor": 170
     },
     {
-      "nome": "Nome6",
-      "img": "link",
-      "valor": 24
+      "nome": "Resident Evil 2",
+      "img": "img6",
+      "valor": 110
     },
     {
-      "nome": "Nome7",
-      "img": "link",
-      "valor": 220
+      "nome": "Mortal Kombat 11",
+      "img": "img7",
+      "valor": 179
     },
     {
-      "nome": "Nome8",
-      "img": "link",
-      "valor": 13.98
+      "nome": "Resident Evil 4",
+      "img": "img8",
+      "valor": 350
     },
     {
-      "nome": "Nome9",
-      "img": "link",
-      "valor": 134
+      "nome": "Yakuza Like a Dragon",
+      "img": "img9",
+      "valor": 135
     },
     {
-      "nome": "Nome10",
-      "img": "link",
-      "valor": 115
+      "nome": "Hollow Knight",
+      "img": "img10",
+      "valor": 110
     }
   ]

@@ -17,8 +17,8 @@ export const Header: React.FC<HeaderProps> = ({
   btnCarrinho
 }) => {
   return (
-    <header className="flex bg-gray-900 sticky top-0 items-center justify-between px-8">
-      <span>{titulo}</span>
+    <header className="flex bg-gray-900 sticky top-0 items-center justify-between px-8 z-50">
+      <span className="text-white font-sans">{titulo}</span>
       <div className="">
         <Button
           text={btnHome.text}
