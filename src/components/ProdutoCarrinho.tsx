@@ -4,14 +4,12 @@ export interface ProdCarrinhoProps {
   nome: string;
   img: string;
   valor: number;
-
-  //btnRemover: ButtonProps
 }
 
 export const ProdutoCarrinho: React.FC<ProdCarrinhoProps> = ({
   nome,
   img,
-  valor /*, btnRemover*/,
+  valor,
 }) => {
   const produto = {
     nome: nome,
@@ -29,8 +27,8 @@ export const ProdutoCarrinho: React.FC<ProdCarrinhoProps> = ({
       ></img>
       <div className="max-w-full ml-2">
         <div className="text-white">
-            <h1>{nome}</h1>
-            <h2>R${Number(valor).toFixed(2)}</h2>
+          <h1>{nome}</h1>
+          <h2>R${Number(valor).toFixed(2)}</h2>
         </div>
         <Button
           text="Remover"

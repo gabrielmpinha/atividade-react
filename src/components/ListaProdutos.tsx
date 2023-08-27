@@ -1,11 +1,6 @@
 import { Produto } from "./Produto";
 import produtos from "../data/produtos.json";
-;
-export interface ListaProps {
-  //items: Item[];
-}
-
-export const ListaProdutos: React.FC<ListaProps> = () => {
+export const ListaProdutos: React.FC = () => {
   return (
     <div className="listaProd">
       {JSON.parse(JSON.stringify(produtos)).map((item: any) => (

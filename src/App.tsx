@@ -5,7 +5,6 @@ import Routes from "./pages/Routes";
 function App() {
   const { btnHome, btn2, btn3, btnCarrinho } = ButtonHome();
 
-  //const { carrinho } = useCarrinhoContext();
   return (
     <>
       <Header
